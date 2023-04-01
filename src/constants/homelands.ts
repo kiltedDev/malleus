@@ -1,1 +1,1 @@
-export const Homelands = ["Freilund", "Marklund", "Wulflund", "Lyonesse"];
+export const Homelands = ['Freilund', 'Marklund', 'Wolflund', 'Lyonesse'];

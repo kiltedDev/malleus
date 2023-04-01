@@ -11,11 +11,19 @@ export const characterRouter = createTRPCRouter({
   }),
 
   create: protectedProcedure
-    .input(z.object({ name: z.string() }))
+    .input(
+      z.object({
+        name: z.string(),
+        homeland: z.string(),
+        archetypeId: z.string(),
+      }),
+    )
     .mutation(({ ctx, input }) => {
       return ctx.prisma.character.create({
         data: {
           name: input.name,
+          homeland: input.homeland,
+          archetypeId: input.archetypeId,
           userId: ctx.session.user.id,
         },
       });
