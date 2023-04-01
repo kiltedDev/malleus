@@ -2,6 +2,7 @@ import { api } from '@malleus/utils/api';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
 
 type ArchetypeSelectProps = {
@@ -20,11 +21,12 @@ export const ArchetypeSelect = ({
 
   return (
     <FormControl>
-      <InputLabel>Archetype</InputLabel>
+      <InputLabel shrink>Archetype</InputLabel>
       <Select
         onChange={handleArchetypeChange}
         defaultValue={archetypeId}
         notched
+        input={<OutlinedInput notched label="Archetype" />}
       >
         {archetypes &&
           archetypes.map((archetype) => (

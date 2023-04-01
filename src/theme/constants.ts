@@ -1,1 +1,1 @@
-const BarWidth = 100;
+export const BarWidth = 100;

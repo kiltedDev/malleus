@@ -21,9 +21,9 @@ export const HomelandSelect = ({
       options={Homelands}
       renderInput={(params) => (
         <TextField
-          // onChange={({ target }) => setHomeland(target.value)}
-          onBlur={handleHomelandBlur}
           {...params}
+          onBlur={handleHomelandBlur}
+          InputLabelProps={{ shrink: true }}
           label="Homeland"
           defaultValue={homeland}
         />

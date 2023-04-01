@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { ArchetypeSelect } from '../ArchetypeSelect';
+import { FactionSelect } from '../FactionSelect';
 import { HomelandSelect } from '../HomelandSelect';
 
 export function CharacterForm() {
@@ -37,6 +38,7 @@ export function CharacterForm() {
       />
       <TextField
         label="Name"
+        InputLabelProps={{ shrink: true }}
         onBlur={({ target }) => setName(target.value)}
         defaultValue={name}
       />
@@ -45,6 +47,7 @@ export function CharacterForm() {
         archetypeId={archetypeId}
         setArchetypeId={setArchetypeId}
       />
+      <FactionSelect faction="" setFaction={console.log} />
       <Button onClick={onSubmit}>Submit</Button>
     </Form>
   );
