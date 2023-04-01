@@ -24,7 +24,7 @@ const Trainings: NextPage = () => {
   };
 
   return (
-    <Main className="malleus-bg flex min-h-screen flex-col items-center justify-center">
+    <div className="content">
       <Form>
         <TextField
           label="Name"
@@ -47,14 +47,9 @@ const Trainings: NextPage = () => {
         </FormControl>
         <Button onClick={onSubmit}>Submit</Button>
       </Form>
-    </Main>
+    </div>
   );
 };
-
-const Main = styled('main')(({ theme }) => ({
-  position: 'fixed',
-  inset: theme.spacing(0, 0, 0, 8),
-}));
 
 const Form = styled('form')(({ theme }) => ({
   display: 'flex',
