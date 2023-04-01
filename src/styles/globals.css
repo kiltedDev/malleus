@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.malleus-bg {
+  @apply bg-gradient-to-br from-[#0d0c0a] to-[#1a0006];
+}

@@ -1,0 +1,1 @@
+const BarWidth = 100;
