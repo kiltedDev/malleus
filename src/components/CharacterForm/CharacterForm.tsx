@@ -9,8 +9,6 @@ import { FactionSelect } from '../FactionSelect';
 import { HomelandSelect } from '../HomelandSelect';
 
 export function CharacterForm() {
-  const { data: archetypes } = api.archetype.getAll.useQuery();
-  const { data: trainings } = api.training.getAll.useQuery();
   const [name, setName] = useState('');
   const [homeland, setHomeland] = useState('');
   const [archetypeId, setArchetypeId] = useState<string>('');
@@ -43,10 +41,8 @@ export function CharacterForm() {
         defaultValue={name}
       />
       <HomelandSelect homeland={homeland} setHomeland={setHomeland} />
-      <ArchetypeSelect
-        archetypeId={archetypeId}
-        setArchetypeId={setArchetypeId}
-      />
+      <ArchetypeSelect />
+      <TextField fullWidth label="notes" multiline rows={4} />
       <FactionSelect faction="" setFaction={console.log} />
       <Button onClick={onSubmit}>Submit</Button>
     </Form>

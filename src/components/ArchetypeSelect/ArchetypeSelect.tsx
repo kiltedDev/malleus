@@ -1,22 +1,21 @@
-import { api } from '@malleus/utils/api';
+import { Archetypes } from '@malleus/constants/Archetypes';
+import { useCharacterStore } from '@malleus/store/character.store';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
+import { type ChangeEvent } from 'react';
 
-type ArchetypeSelectProps = {
-  archetypeId: string;
-  setArchetypeId(archetypeId: string): void;
-};
+export const ArchetypeSelect = () => {
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const setCharacterAttr = useCharacterStore((store) => store.setCharacterAttr);
+  const archetypeId = useCharacterStore(
+    (store) => store.activeChar.archetypeId,
+  );
 
-export const ArchetypeSelect = ({
-  archetypeId,
-  setArchetypeId,
-}: ArchetypeSelectProps) => {
-  const { data: archetypes } = api.archetype.getAll.useQuery();
-  const handleArchetypeChange = (e: React.FocusEvent<HTMLInputElement>) => {
-    setArchetypeId(e.target.value);
+  const handleArchetypeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setCharacterAttr('archetypeId', e.target.value);
   };
 
   return (
@@ -28,12 +27,11 @@ export const ArchetypeSelect = ({
         notched
         input={<OutlinedInput notched label="Archetype" />}
       >
-        {archetypes &&
-          archetypes.map((archetype) => (
-            <MenuItem key={archetype.id} value={archetype.id}>
-              {archetype.name}
-            </MenuItem>
-          ))}
+        {Object.values(Archetypes).map((archetype) => (
+          <MenuItem key={archetype.id} value={archetype.id}>
+            {archetype.name}
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );
