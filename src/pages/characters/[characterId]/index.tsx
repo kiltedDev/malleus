@@ -1,7 +1,7 @@
 import { CharacterWizard } from '@malleus/components/CharacterWizard';
-import { type NextPage } from 'next';
+import { type NextPage } from 'next/types';
 
-const Characters: NextPage = () => {
+export const CharacterView: NextPage = () => {
   return (
     <div className="content">
       <CharacterWizard />
@@ -9,4 +9,4 @@ const Characters: NextPage = () => {
   );
 };
 
-export default Characters;
+export default CharacterView;

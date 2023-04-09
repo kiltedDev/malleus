@@ -1,6 +1,5 @@
-export const Archetypes = {
-  Gentry: {
-    id: 'clfy37t3c00006v2z4kuzkkqn',
+export const Archetypes: readonly Archetype[] = [
+  {
     name: 'Gentry',
     features: 'Start with a Base 5 Upkeep and  an Income of 5 Marks',
     incomeIncrease: 5,
@@ -9,18 +8,16 @@ export const Archetypes = {
     trainingIncrease: 0,
     upkeepIncrease: 1,
   },
-  Scholar: {
-    id: 'clfy38f0a00026v2zl533ocjk',
+  {
     name: 'Scholar',
-    features: 'Start with Learned Training and free Upkeep on “Books and Inks”',
+    features: 'Start with Learned Training and free Upkeep on "Books and Inks"',
     incomeIncrease: 0,
     description:
       'Knowledge is a weapon far sharper than any blade wielded by a feeble hand.',
     trainingIncrease: 1,
-    upkeepIncrease: 1,
+    upkeepIncrease: 2,
   },
-  Warrior: {
-    id: 'clfy3bhz000006v6506wrk9m4',
+  {
     name: 'Warrior',
     features:
       'One time after each Dawn or Dusk a fallen Warrior may declare "Not Today" and stand up Wounded.',
@@ -30,8 +27,7 @@ export const Archetypes = {
     trainingIncrease: 0,
     upkeepIncrease: 0,
   },
-  Commoner: {
-    id: 'clfy3cb2z00026v65wp6bypk3',
+  {
     name: 'Commoner',
     features:
       'Start with one additional Training. When crafting, or helping another to craft, the Commoner may substitute one  material for another- once per Dawn/Dusk.',
@@ -41,8 +37,7 @@ export const Archetypes = {
     trainingIncrease: 1,
     upkeepIncrease: 0,
   },
-  Knave: {
-    id: 'clfy3d5tl00046v65vgbrk3xn',
+  {
     name: 'Knave',
     features:
       'Start with one additional Illicit Training  and a Income of 2 Marks. Knaves may learn additional Illicit Trainings through growth.',
@@ -52,6 +47,13 @@ export const Archetypes = {
     trainingIncrease: 1,
     upkeepIncrease: 0,
   },
-};
+] as const;
 
-export type Archetype = (typeof Archetypes)[keyof typeof Archetypes];
+export type Archetype = {
+  name: string;
+  features: string;
+  incomeIncrease: number;
+  description: string;
+  trainingIncrease: number;
+  upkeepIncrease: number;
+};

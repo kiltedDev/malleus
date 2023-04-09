@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body * {
+  box-sizing: border-box;
+}
+
 .max-w-1200 {
   max-width: 1200px;
 }
@@ -16,4 +20,8 @@
   @apply max-w-1200 mx-auto
   flex h-full flex-col
   items-center justify-center gap-8;
+}
+
+.wizard-panel {
+  @apply flex h-[70vh] w-full gap-8 rounded-lg p-8;
 }

@@ -15,16 +15,30 @@ export const characterRouter = createTRPCRouter({
       z.object({
         name: z.string(),
         homeland: z.string(),
-        archetypeId: z.string(),
+        archetype: z.string(),
+        faction: z.string(),
+        notes: z.string(),
+        playerName: z.string(),
+        trainings: z.array(z.string()),
+        talents: z.array(z.string()),
+        trappings: z.array(z.string()),
+        eventCount: z.number(),
       }),
     )
     .mutation(({ ctx, input }) => {
       return ctx.prisma.character.create({
         data: {
-          name: input.name,
-          homeland: input.homeland,
-          archetypeId: input.archetypeId,
           userId: ctx.session.user.id,
+          archetype: input.archetype,
+          eventCount: input.eventCount,
+          faction: input.faction,
+          homeland: input.homeland,
+          name: input.name,
+          notes: input.notes,
+          playerName: input.playerName,
+          talents: input.talents,
+          trainings: input.trainings,
+          trappings: input.talents,
         },
       });
     }),

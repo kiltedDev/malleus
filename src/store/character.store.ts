@@ -6,25 +6,25 @@ type CharacterState = {
 };
 
 type CharacterActions = {
-  clearActiveChar(): void;
-  setCharacterAttr(
-    attr: keyof Character,
-    value: string | number | string[],
-  ): void;
+  clearActiveChar: () => void;
+  setActiveChar: (char: Character) => void;
+  updateCharacter: (charUpdate: Partial<Character>) => void;
 };
 
 const initialState: CharacterState = {
   activeChar: {
-    name: '',
     id: '',
     userId: '',
-    events: 0,
-    archetypeId: '',
-    trainingIds: [],
-    talentIds: [],
+    archetype: '',
+    eventCount: 0,
+    faction: 'Marklund',
     homeland: '',
-    playerName: '',
+    name: '',
     notes: '',
+    playerName: '',
+    talents: [],
+    trainings: [],
+    trappings: [],
   },
 };
 
@@ -33,11 +33,7 @@ type CharacterStore = CharacterState & CharacterActions;
 export const useCharacterStore = create<CharacterStore>((set) => ({
   ...initialState,
   clearActiveChar: () => set(initialState),
-  setCharacterAttr: (attr, value) =>
-    set((state) => ({
-      activeChar: {
-        ...state.activeChar,
-        [attr]: value,
-      },
-    })),
+  setActiveChar: (activeChar) => set({ activeChar }),
+  updateCharacter: (charUpdate) =>
+    set((state) => ({ activeChar: { ...state.activeChar, ...charUpdate } })),
 }));
