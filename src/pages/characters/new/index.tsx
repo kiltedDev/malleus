@@ -1,12 +1,13 @@
-import { CharacterWizard } from '@malleus/components/CharacterWizard';
+import { AuthGuard } from '@malleus/components/AuthGuard/AuthGuard';
 import { type NextPage } from 'next';
+import NewCharacter from './NewCharacter.view';
 
-const Characters: NextPage = () => {
+const Page: NextPage = () => {
   return (
-    <div className="content">
-      <CharacterWizard />
-    </div>
+    <AuthGuard>
+      <NewCharacter />
+    </AuthGuard>
   );
 };
 
-export default Characters;
+export default Page;

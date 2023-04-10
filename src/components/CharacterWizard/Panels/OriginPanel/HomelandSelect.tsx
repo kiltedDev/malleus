@@ -12,7 +12,9 @@ const generateHomelandOptions = () => {
   const { options } = Homelands.reduce(
     (acc, val) => {
       if (acc.currentGroup !== val.group) {
-        acc.options.push(<ListSubheader>{val.group}</ListSubheader>);
+        acc.options.push(
+          <ListSubheader key={val.group}>{val.group}</ListSubheader>,
+        );
       }
       return {
         currentGroup: val.group,

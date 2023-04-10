@@ -17,7 +17,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <SessionProvider session={session}>
       <ThemeProvider theme={theme}>
         <Layout>
+          {/* <AuthGuard> */}
           <Component {...pageProps} />
+          {/* </AuthGuard> */}
         </Layout>
       </ThemeProvider>
     </SessionProvider>
