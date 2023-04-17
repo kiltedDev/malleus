@@ -1,3 +1,4 @@
+import { type FactionDescription } from '@malleus/constants';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -5,7 +6,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
-import { type FactionDescription } from './';
 
 type FactionCardProps = {
   faction: FactionDescription;

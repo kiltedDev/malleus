@@ -1,4 +1,4 @@
-import { Talents, type Talent } from '@malleus/constants/Talents';
+import { Talents, type Talent } from '@malleus/constants';
 import { useMaxTalents } from '@malleus/hooks/useMaxTalents';
 import { useCharacterStore } from '@malleus/store/character.store';
 import Paper from '@mui/material/Paper';

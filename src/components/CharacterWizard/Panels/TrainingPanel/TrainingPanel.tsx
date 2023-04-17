@@ -1,4 +1,4 @@
-import { Trainings, type Training } from '@malleus/constants/Trainings';
+import { Trainings, type Training } from '@malleus/constants';
 import { useMaxTrainings } from '@malleus/hooks/useMaxTrainings';
 import { useNeedsIllicit } from '@malleus/hooks/useNeedsIllicit';
 import { useCharacterStore } from '@malleus/store/character.store';

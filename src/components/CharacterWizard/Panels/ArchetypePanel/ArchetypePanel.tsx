@@ -1,8 +1,8 @@
-import { Archetypes } from '@malleus/constants/Archetypes';
+import { WizardCard } from '@malleus/components/CharacterWizard';
+import { Archetypes } from '@malleus/constants';
 import { useCharacterStore } from '@malleus/store/character.store';
 import Paper from '@mui/material/Paper';
 import { uniq } from 'lodash';
-import { WizardCard } from '../../';
 
 export const ArchetypePanel = () => {
   const charArchetype = useCharacterStore(

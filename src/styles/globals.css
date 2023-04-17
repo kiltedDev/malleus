@@ -4,6 +4,7 @@
 
 body * {
   box-sizing: border-box;
+  color: white;
 }
 
 .max-w-1200 {

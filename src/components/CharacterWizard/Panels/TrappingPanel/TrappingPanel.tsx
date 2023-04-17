@@ -1,4 +1,4 @@
-import { Trappings } from '@malleus/constants/Trappings';
+import { Trappings } from '@malleus/constants';
 import { useCharacterStore } from '@malleus/store/character.store';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';

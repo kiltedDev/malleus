@@ -9,6 +9,8 @@ const bodyText =
   "Malleus isn't complicated. It's ultimately about a 'not-so-friendly' competition between factions to gather as many glowing green rocks as they can- all while begrudgingly working together to survive a nightmarish onslaught of cultists and monsters. It offers a hardcore experience that endeavors to make sure all of its participants collaborate in having fun. It offers rules light mechanics and brutal, harsh combat set in a fantasy world that just barely resembles earth in the 16th Century.";
 
 const Home: NextPage = () => {
+  const { data: sessionData } = useSession();
+
   return (
     <div className="content">
       <Image
@@ -28,6 +30,12 @@ const Home: NextPage = () => {
           {bodyText}
         </Typography>
       </div>
+      <button
+        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+        onClick={sessionData ? () => void signOut() : () => void signIn()}
+      >
+        {sessionData ? 'Sign out' : 'Sign in with Discord'}
+      </button>
     </div>
   );
 };

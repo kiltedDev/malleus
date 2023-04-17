@@ -1,11 +1,7 @@
+import { FactionDescriptions, type Faction } from '@malleus/constants';
 import { useCharacterStore } from '@malleus/store/character.store';
 import Paper from '@mui/material/Paper';
-import {
-  FactionCard,
-  FactionDescriptions,
-  FactionSelect,
-  type Faction,
-} from './';
+import { FactionCard, FactionSelect } from './';
 
 export const AllegiancePanel = () => {
   const selectedFaction = useCharacterStore(
