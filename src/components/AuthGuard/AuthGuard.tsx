@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect, type PropsWithChildren } from 'react';
 
-const PublicRoutes = ['/auth/'] as const;
+const PublicRoutes = ['auth', 'events'] as const;
 
 const shallNotPass = (pathname: string) => {
   if (pathname === '/') return false;
