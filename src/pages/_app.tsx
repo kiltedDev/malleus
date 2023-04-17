@@ -4,6 +4,7 @@ import { type AppType } from 'next/app';
 
 import { api } from '@malleus/utils/api';
 
+import { AuthGuard } from '@malleus/components/AuthGuard/AuthGuard';
 import { Layout } from '@malleus/components/Layout';
 import '@malleus/styles/globals.css';
 import { theme } from '@malleus/theme';
@@ -17,9 +18,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <SessionProvider session={session}>
       <ThemeProvider theme={theme}>
         <Layout>
-          {/* <AuthGuard> */}
-          <Component {...pageProps} />
-          {/* </AuthGuard> */}
+          <AuthGuard>
+            <Component {...pageProps} />
+          </AuthGuard>
         </Layout>
       </ThemeProvider>
     </SessionProvider>

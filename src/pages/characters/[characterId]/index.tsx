@@ -2,7 +2,7 @@ import { AuthGuard } from '@malleus/components/AuthGuard/AuthGuard';
 import { type NextPage } from 'next';
 import Character from './Character.view';
 
-const Page: NextPage = () => {
+const CharacterIndex: NextPage = () => {
   return (
     <AuthGuard>
       <Character />
@@ -10,4 +10,4 @@ const Page: NextPage = () => {
   );
 };
 
-export default Page;
+export default CharacterIndex;
