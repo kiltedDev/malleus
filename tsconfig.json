@@ -13,9 +13,9 @@
     "jsx": "preserve",
     "incremental": true,
     "noUncheckedIndexedAccess": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@malleus/*": ["./*"]
+      "@malleus/*": ["./src/*"]
     },
     "allowJs": true,
     "strict": false
