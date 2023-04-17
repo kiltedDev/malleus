@@ -1,4 +1,3 @@
-import { Factions } from '@malleus/constants/Factions';
 import { useCharacterStore } from '@malleus/store/character.store';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -6,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
 import { type ChangeEvent } from 'react';
+import { Factions } from './';
 
 export const FactionSelect = () => {
   const updateCharacter = useCharacterStore((store) => store.updateCharacter);
