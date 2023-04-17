@@ -1,4 +1,4 @@
-import { Homelands } from '@malleus/constants/homelands';
+import { Homelands } from '@malleus/constants';
 import { useCharacterStore } from '@malleus/store/character.store';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
