@@ -42,4 +42,17 @@ export const characterRouter = createTRPCRouter({
         },
       });
     }),
+  destroy: protectedProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      }),
+    )
+    .mutation(({ ctx, input }) => {
+      return ctx.prisma.character.delete({
+        where: {
+          id: input.id,
+        },
+      });
+    }),
 });

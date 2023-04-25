@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import { useRouter } from 'next/router';
 
 const ReportIcon = (valid: boolean) => {
   if (valid) return <CheckCircleIcon color="success" />;
@@ -16,7 +17,9 @@ const ReportIcon = (valid: boolean) => {
 };
 
 export const FinalizePanel = () => {
+  const router = useRouter();
   const character = useCharacterStore((store) => store.activeChar);
+  const clearActiveChar = useCharacterStore((store) => store.clearActiveChar);
   const needsIllicit = useNeedsIllicit();
   const maxTrainings = useMaxTrainings();
   const maxTalents = useMaxTalents();
@@ -34,8 +37,12 @@ export const FinalizePanel = () => {
   };
 
   const handleCharacterSave = () => {
-    // api.character.create.useMutation(character);
-    createCharacter.mutate(character);
+    createCharacter.mutate(character, {
+      onSuccess: () => {
+        clearActiveChar();
+        void router.push('/characters');
+      },
+    });
   };
 
   return (
@@ -77,11 +84,18 @@ export const FinalizePanel = () => {
       </Typography>
       <Typography variant="title">
         Trappings Complete{' '}
-        <Tooltip title="Look, inventory management is complicated.  I'll get there.">
+        <Tooltip title="Look, inventory management is complicated. I'll get there.">
           <CheckCircleIcon color="warning" />
         </Tooltip>
       </Typography>
-      <Button onClick={handleCharacterSave}>Save</Button>
+      <Button
+        color="success"
+        variant="outlined"
+        className="w-fit"
+        onClick={handleCharacterSave}
+      >
+        Save
+      </Button>
     </Paper>
   );
 };

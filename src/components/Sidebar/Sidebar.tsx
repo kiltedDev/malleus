@@ -1,4 +1,5 @@
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CastleIcon from '@mui/icons-material/Castle';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import FlagIcon from '@mui/icons-material/Flag';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
@@ -17,6 +18,11 @@ import Link from 'next/link';
 import React from 'react';
 
 const TopBarItems = [
+  {
+    text: 'home',
+    route: '',
+    icon: <CastleIcon />,
+  },
   {
     text: 'characters',
     icon: <PeopleIcon />,
