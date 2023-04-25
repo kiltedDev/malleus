@@ -7,22 +7,24 @@ body * {
   color: white;
 }
 
-.max-w-1200 {
-  max-width: 1200px;
-}
+@layer {
+  .max-w-1200 {
+    max-width: 1200px;
+  }
 
-.main-container {
-  inset: 0 0 0 64px;
-  @apply fixed 
-  bg-gradient-to-br from-[#0d0c0a] to-[#1a0006];
-}
+  .main-container {
+    inset: 0 0 0 64px;
+    @apply fixed 
+    bg-gradient-to-br from-[#0d0c0a] to-[#1a0006];
+  }
 
-.content {
-  @apply max-w-1200 mx-auto
-  flex h-full flex-col
-  items-center justify-center gap-8;
-}
+  .content {
+    @apply max-w-1200 
+    mx-auto flex h-full
+    flex-col items-center justify-center gap-8 overflow-y-auto;
+  }
 
-.wizard-panel {
-  @apply flex h-[70vh] w-full gap-8 rounded-lg p-8;
+  .wizard-panel {
+    @apply flex h-[70vh] w-full gap-8 rounded-lg p-8;
+  }
 }
